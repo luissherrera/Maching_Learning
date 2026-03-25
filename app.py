@@ -15,6 +15,22 @@ def firstPage():
 @app.route('/LinealRegresion', methods=["GET","POST"])
 def calculateGrade():
 
+@app.route('/caso1')
+def caso1():
+    return render_template('caso1.html')
+
+@app.route('/caso2')
+def caso2():
+    return render_template('caso2.html')
+
+@app.route('/caso3')
+def caso3():
+    return render_template('caso3.html')
+
+@app.route('/caso4')
+def caso4():
+    return render_template('caso4.html')
+
     resultado = None
 
     if request.method == "POST":
