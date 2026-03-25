@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casos de Uso - Machine Learning</title>
+    <title>Use Case 1 - Facial Recognition</title>
+
     <style>
-        /* Reset */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -14,20 +15,18 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(120deg, #1e3c72, #2a5298);
-            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f0f4ff;
         }
 
         /* NAVBAR */
         .navbar {
             width: 100%;
             padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.2);
+            background-color: #1e3c72;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(10px);
         }
 
         .navbar h2 {
@@ -40,67 +39,74 @@
             margin-left: 20px;
             transition: 0.3s;
             font-weight: bold;
+
         }
 
         .nav-links a:hover {
             color: #00c6ff;
         }
 
-        /* CONTENEDOR */
+        /* CONTAINER */
         .container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-
-        /* TARJETA */
-        .card {
+            max-width: 900px;
+            margin: 40px auto;
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.6s ease;
         }
 
-        /* TITULO */
-        .card h1 {
+        /* TITLES */
+        h1 {
             text-align: center;
-            color: #2a5298;
-            margin-bottom: 25px;
-        }
-
-        /* SECCIONES */
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section h2 {
             color: #1e3c72;
-            margin-bottom: 8px;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #1e3c72;
+            margin-top: 25px;
+            margin-bottom: 10px;
             border-left: 6px solid #2a5298;
-            padding-left: 10px;
+            padding-left: 12px;
         }
 
-        .section p {
-            line-height: 1.6;
+        p {
+            line-height: 1.7;
             color: #444;
+            margin-bottom: 12px;
         }
 
-        /* LISTA */
+        /* LISTS */
         ul {
-            margin-left: 20px;
+            margin-left: 25px;
             margin-top: 10px;
         }
 
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        strong {
-            color: #2a5298;
+        /* BUTTON */
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            background: #1e3c72;
+            padding: 12px 22px;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* ANIMACIÓN */
+        .btn-back:hover {
+            background: #2a5298;
+        }
+
+        /* ANIMATION */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -112,56 +118,55 @@
                 transform: translateY(0);
             }
         }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                margin-top: 10px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <h2>Use Case 1: Facial Recognition for Device Unlocking</h2>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>Machine Learning Use Cases</h2>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/cases">Cases</a>
+        </div>
+    </div>
 
-    <h3>Problem Description</h3>
-    <p>
-        Users need fast access to their smartphones without compromising security.
-        Traditional methods such as PINs and patterns are vulnerable and slow.
-        A system is required that can identify the owner securely and within milliseconds.
-    </p>
+    <!-- CARD -->
+    <div class="container">
+        <h1>Use Case 1: Facial Recognition for Device Unlocking</h1>
 
-    <h3>Type of Machine Learning</h3>
-    <p>
-        Computer Vision + Deep Learning (Convolutional Neural Networks – CNNs).
-    </p>
+        <h2>Problem Description</h2>
+        <p>
+            Users need fast access to their smartphones without compromising security.
+            Traditional methods such as PINs and patterns are vulnerable and slow.
+            A system is required that can identify the owner securely and within milliseconds.
+        </p>
 
-    <h3>Input Data</h3>
-    <p>
-        Images of the user’s face captured by the front-facing camera
-        (RGB, infrared, or depth, depending on the phone model).
-    </p>
+        <h2>Type of Machine Learning</h2>
+        <p>
+            Computer Vision + Deep Learning (Convolutional Neural Networks – CNNs).
+        </p>
 
-    <h3>Expected Output</h3>
-    <ul>
-        <li>Access granted (face matches the registered user).</li>
-        <li>Access denied (unknown or non-matching face).</li>
-    </ul>
+        <h2>Input Data</h2>
+        <p>
+            Images of the user’s face captured by the front-facing camera
+            (RGB, infrared, or depth, depending on the phone model).
+        </p>
 
-    <h3>Real-World Relevance</h3>
-    <p>
-        Enables fast, convenient, and secure unlocking. Used by modern biometric systems
-        such as iPhone FaceID, Samsung Face Unlock, and others.
-    </p>
-    </section>
-    <a href="/" class="btn-volver">Volver al inicio</a>
+        <h2>Expected Output</h2>
+        <ul>
+            <li>Access granted (face matches the registered user).</li>
+            <li>Access denied (unknown or non-matching face).</li>
+        </ul>
+
+        <h2>Real-World Relevance</h2>
+        <p>
+            Enables fast, convenient, and secure unlocking. Used by modern biometric systems
+            such as iPhone FaceID, Samsung Face Unlock, and others.
+        </p>
+
+        <a class="btn-back" href="/">⬅ Back to Home</a>
     </div>
 
 </body>

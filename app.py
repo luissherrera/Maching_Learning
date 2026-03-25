@@ -4,8 +4,9 @@ import LinealRegresion
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/home')
 def home():
-    return "hello flask"
+    return render_template('home.html')
 
 @app.route('/FirstPage')
 def firstPage():
@@ -26,6 +27,14 @@ def caso3():
 @app.route('/caso4')
 def caso4():
     return render_template('caso4.html')
+
+@app.route('/base')
+def base():
+    return render_template('base.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 
 @app.route('/LinealRegresion', methods=["GET","POST"])
