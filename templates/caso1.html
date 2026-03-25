@@ -6,79 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casos de Uso - Machine Learning</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+        /* Reset */
+        * {
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
             min-height: 100vh;
         }
 
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            text-align: center;
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
         }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
+        .navbar h2 {
+            color: white;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-volver {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 10px 20px;
-            background-color: #3498db;
+        .nav-links a {
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            margin-left: 20px;
+            transition: 0.3s;
+            font-weight: bold;
         }
 
-        .btn-volver:hover {
-            background-color: #2980b9;
+        .nav-links a:hover {
+            color: #00c6ff;
+        }
+
+        /* CONTENEDOR */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* TARJETA */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease;
+        }
+
+        /* TITULO */
+        .card h1 {
+            text-align: center;
+            color: #2a5298;
+            margin-bottom: 25px;
+        }
+
+        /* SECCIONES */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+            border-left: 6px solid #2a5298;
+            padding-left: 10px;
+        }
+
+        .section p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* LISTA */
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        strong {
+            color: #2a5298;
+        }
+
+        /* ANIMACIÓN */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Machine Learning en Smartphones</h1>
-        <p>
-            Machine learning powers many features in modern smartphones.
+    <h2>Use Case 1: Facial Recognition for Device Unlocking</h2>
 
-            Algorithms enable facial recognition used to unlock devices and enhance security. They also make voice
-            assistants like Siri, Alexa, Google Assistant, and Cortana possible, using natural language processing to
-            understand what we say and respond intelligently. Furthermore, machine learning improves phone cameras by
-            analyzing images, detecting objects or faces, and automatically optimizing photo quality.
-        </p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS01hkTtQ9oqvTf35YzVdG2qgQSWQ9MhLrRBw"
-            alt="Machine Learning en Smartphones">
+    <h3>Problem Description</h3>
+    <p>
+        Users need fast access to their smartphones without compromising security.
+        Traditional methods such as PINs and patterns are vulnerable and slow.
+        A system is required that can identify the owner securely and within milliseconds.
+    </p>
 
-        <br>
-        <a href="/" class="btn-volver">Volver al inicio</a>
+    <h3>Type of Machine Learning</h3>
+    <p>
+        Computer Vision + Deep Learning (Convolutional Neural Networks – CNNs).
+    </p>
+
+    <h3>Input Data</h3>
+    <p>
+        Images of the user’s face captured by the front-facing camera
+        (RGB, infrared, or depth, depending on the phone model).
+    </p>
+
+    <h3>Expected Output</h3>
+    <ul>
+        <li>Access granted (face matches the registered user).</li>
+        <li>Access denied (unknown or non-matching face).</li>
+    </ul>
+
+    <h3>Real-World Relevance</h3>
+    <p>
+        Enables fast, convenient, and secure unlocking. Used by modern biometric systems
+        such as iPhone FaceID, Samsung Face Unlock, and others.
+    </p>
+    </section>
+    <a href="/" class="btn-volver">Volver al inicio</a>
     </div>
 
 </body>
